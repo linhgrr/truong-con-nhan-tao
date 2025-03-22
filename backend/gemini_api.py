@@ -22,7 +22,7 @@ def load_gemini_api_key():
 load_gemini_api_key()
 
 class GeminiClient:
-    def __init__(self, model_name: str = "gemini-pro"):
+    def __init__(self, model_name: str = "gemini-2.0-flash"):
         self.model_name = model_name
         # Check if API key is configured
         self.api_key = load_gemini_api_key()
