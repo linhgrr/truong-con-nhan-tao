@@ -157,8 +157,8 @@ function App() {
         <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
           <div className="max-w-md mx-auto">
             <div className="text-center">
-              <h1 className="text-3xl font-extrabold text-gray-900">RAG Question Answering</h1>
-              <p className="mt-2 text-sm text-gray-500">Enter a multiple-choice question to get an answer based on the knowledge base.</p>
+              <h1 className="text-3xl font-extrabold text-gray-900">CNXH Helper</h1>
+              <p className="mt-2 text-sm text-gray-500">Plz donate for me</p>
             </div>
             
             {/* Show API Key form if needed */}
@@ -176,11 +176,11 @@ function App() {
                     name="question"
                     rows="5"
                     className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md p-2"
-                    placeholder="Which component of RAG is responsible for finding relevant documents?
-A. Generator
-B. Retriever
-C. Embedder
-D. Transformer"
+                    placeholder="Who is taga?
+                    A. Taga
+                    B. Trường
+                    C. Vip
+                    D. Hedspi"
                     value={question}
                     onChange={(e) => setQuestion(e.target.value)}
                   />
@@ -224,19 +224,6 @@ D. Transformer"
                   <p className="text-sm text-gray-700 mb-1">Reasoning:</p>
                   <p className="text-sm text-gray-900">{result.reasoning}</p>
                 </div>
-                
-                {result.contexts && result.contexts.length > 0 && (
-                  <div className="mt-4">
-                    <p className="text-sm text-gray-700 mb-1">Relevant Contexts:</p>
-                    <div className="mt-2 max-h-60 overflow-auto">
-                      {result.contexts.map((context, index) => (
-                        <div key={index} className="mb-2 p-2 bg-white rounded border border-gray-200">
-                          <p className="text-xs text-gray-900 whitespace-pre-line">{context}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </div>
             )}
           </div>

@@ -15,9 +15,6 @@ COPY backend/ backend/
 # Tạo file .env trống
 RUN echo "GEMINI_API_KEY=" > .env
 
-# Tạo file knowledge.txt rỗng nếu không có
-RUN touch data/knowledge.txt
-
 # Frontend build
 FROM node:18 AS frontend-build
 
