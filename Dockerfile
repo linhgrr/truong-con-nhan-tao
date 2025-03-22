@@ -8,6 +8,8 @@ RUN mkdir -p data models/faiss_index backend
 # Copy requirements file và cài đặt dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+# Đảm bảo huggingface_hub phiên bản cũ được cài đặt lại sau các dependencies khác
+RUN pip install --no-cache-dir huggingface_hub==0.16.4
 
 # Copy backend code
 COPY backend/ backend/
