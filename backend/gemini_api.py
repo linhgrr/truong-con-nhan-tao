@@ -81,6 +81,9 @@ QUESTION:
 Based ONLY on the information provided in the CONTEXT above, answer the multiple-choice question.
 If the context doesn't contain enough information to answer with confidence, respond with "Không đủ thông tin" (Not enough information).
 
+Pay attention to both LOCAL KNOWLEDGE BASE and WEB SEARCH RESULTS if available. Compare the information from both sources to provide a more accurate answer.
+If there are contradictions between local knowledge and web results, mention this in your reasoning.
+
 Return your answer in the following JSON format:
 {{
   "answer": "A", 

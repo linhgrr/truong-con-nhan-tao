@@ -91,6 +91,7 @@ async def startup_event():
 # Define request models
 class QuestionRequest(BaseModel):
     question: str
+    use_web_search: bool = True  # Cho phép tùy chọn bật/tắt tìm kiếm web
 
 class ApiKeyRequest(BaseModel):
     api_key: str
@@ -168,8 +169,11 @@ async def ask_question(request: QuestionRequest):
         raise HTTPException(status_code=500, detail="RAG pipeline not initialized")
     
     try:
-        # Process the question through the RAG pipeline
-        result = await rag_pipeline.answer_question(request.question)
+        # Process the question through the RAG pipeline with web search option
+        result = await rag_pipeline.answer_question(
+            question=request.question,
+            use_web_search=request.use_web_search
+        )
         return result
     
     except Exception as e:
